@@ -1,4 +1,4 @@
-# slsscripts
+# Serverless Helper Scripts
 
 ![slssetup Main Menu](screenshot.png)
 
