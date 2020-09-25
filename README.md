@@ -27,11 +27,11 @@ serverless simpler and more forgiving.
     - We will use the details you gave to pre-build some shortcut scripts and put them somewhere they can be called from anywhere in your terminal.
     - They will be stored in `~/bin`
     - Scripts are:
-        - `slsinfo` - The same as `serverless info`
-        - `slsdeploy` - The same as `serverless deploy`
+        - `slsinfo` - The same as `serverless info` but with your stack and profile appended
+        - `slsdeploy` - The same as `serverless deploy` but with your stack and profile appended
         - `slsmfa` - A script to authenticate via MFA
 - **List Local Profiles**
-    - We read the local `~/.aws/credentials` file and show you only the account name. This is to help you fill out option 1, and to avoud any spelling errors and such.
+    - We read the local `~/.aws/credentials` file and show you only the account name. This is to help you fill out option 1, and to avoid any spelling errors and such.
 - **Help**
     - Shows a brief help text
 - **Exit Without Building**
@@ -52,3 +52,5 @@ provider:
   region: eu-west-2
   infraStackName: ${opt:infraStackName}
 ```
+
+And elsewhere in your yaml: `${self:provider.infraStackName}`
