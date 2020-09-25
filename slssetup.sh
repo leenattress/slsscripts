@@ -151,6 +151,7 @@ show_menus() {
     echo " ~~~~~~~~~~~~~~~~~~~~~~~"
     echo "  S L S - S C R I P T S "
     echo " ~~~~~~~~~~~~~~~~~~~~~~~"
+    echo
     if [ -z ${aws_profile} ]; then
         echo " 1. Choose AWS Profile"
     else
@@ -173,12 +174,13 @@ show_menus() {
     echo " 5. List Local Profiles"
     echo " 6. Help"
     echo " 0. Exit without Building"
+    echo
 }
 # read input from the keyboard and take a action
 # Exit when user the user select exit form the menu option.
 read_options() {
     local choice
-    read -p " Enter choice [ 1 - 4 ] " choice
+    read -p " Enter choice [ 0 - 6 ] " choice
     case $choice in
     1) profile ;;
     2) stack ;;
