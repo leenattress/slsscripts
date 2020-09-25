@@ -10,11 +10,12 @@ serverless simpler and more forgiving.
 ## Get started:
 
 ```sh
+git clone https://github.com/leenattress/slsscripts.git
+cs slsscripts
 ./slssetup.sh
 ```
 
 ## Main Menu
-
 
 - **Choose AWS Profile**
     - Type your AWS profile name, as found in your `~/.aws/credentials` file.
