@@ -1,6 +1,8 @@
 #!/bin/bash
 # AWS script builder for serverless interaction
 
+command -v aws >/dev/null 2>&1 || { echo >&2 "We require aws but it's not installed.  Aborting."; exit 1; }
+
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
@@ -43,7 +45,7 @@ build() {
 
         # Build MFA script
         ESCAPED_REPLACE_MFA=$(printf '%s\n' "$mfa_arn" | sed -e 's/[\/&]/\\&/g')
-        cp slsmfa.template temp1.txt
+        cp slsmfa.sh temp1.txt
         sed "s/AWSPROFILE/$aws_profile/" temp1.txt >temp2.txt
         sed "s/IAMARN/$ESCAPED_REPLACE_MFA/" temp2.txt >$HOME/bin/slsmfa
         echo "✅ Wrote slsmfa script"
