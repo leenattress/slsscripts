@@ -1,11 +1,26 @@
 # Serverless Helper Scripts
 
+> ℹ This script is to help developers save time while writing serverless applications when your team uses MFA.
+
+
 ![slssetup Main Menu](screenshot.png)
 
-> This script is designed to make the task of
-setting up your MFA key for AWS, and providing
-small helper scripts to make working with
-serverless simpler and more forgiving.
+## What does this do?
+
+- Creates shortcut single commands that replace lengthy types sls commands
+    - `serverless deploy --infraStackName my-stack-name --aws-profile my-aws-profile`
+    - becomes...
+    - `slsdeploy`
+- Provides a simple UI to guide script creations
+- Saves shortcut scripts to `~/bin` away from any projects and git repos.
+
+## What does it not do?
+
+- Save any details between sessions
+- Interferre with anything inside projects
+- Work at all in CI/CD environments, this is for developers locally to save time.
+- Call the AWS API directly, we use the aws cli to do our work.
+
 
 ## Get started:
 
