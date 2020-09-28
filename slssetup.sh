@@ -72,6 +72,15 @@ EOT
     chmod u+x $HOME/bin/slsdeploy
     echo "✅ Wrote slsdeploy script"
 
+
+    # Build offline script
+    cat <<EOT >$HOME/bin/slsoffline
+#!/bin/bash
+sls offline --infraStackName $sls_stack --aws-profile $aws_profile
+EOT
+    chmod u+x $HOME/bin/slsoffline
+    echo "✅ Wrote slsoffline script"
+    
     # List Buckets script
     # backtick='`'
     # cat <<EOT > $HOME/bin/slsbuckets
